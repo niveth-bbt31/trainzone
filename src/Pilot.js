@@ -73,9 +73,9 @@ function Pilot(props) {
                     <Form.Check
                         type="switch"
                         id="custom-switch"
-                        label={statusres.headLamp===120 ? "Low" :"High"}
+                        label={statusres.headLamp===90 ? "Low" :"High"}
                         //checked={runstatus===0 ? false :true}
-                        checked={statusres.headLamp===120 ? false :true}
+                        checked={statusres.headLamp===90 ? false :true}
                         onChange={()=>maxBrightheadlamp()}
                     />
                 </Form>
@@ -146,7 +146,7 @@ function Pilot(props) {
   function maxBrightheadlamp(){
       setstatusres(null);
       let statusVal;
-      (statusres.headLamp===120) ? statusVal = 1 :statusVal =0;
+      (statusres.headLamp===90) ? statusVal = 1 :statusVal =0;
       axios.get(baseURL+`/set/headLamp?value=${statusVal}`).then((response) => {
         setstatusres(response.data);
       }).catch(error => {
