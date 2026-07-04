@@ -3,7 +3,7 @@ import { Button, Stack,Form,Card,ButtonGroup } from 'react-bootstrap';
 import axios from 'axios';
 
 
-const baseURL = 'http://ec2-54-199-245-177.ap-northeast-1.compute.amazonaws.com';
+const baseURL = 'http://vedha.ddns.net:5100';
 
 function Pilot(props) {
   const [statusres, setstatusres]=useState(null);
@@ -36,7 +36,7 @@ function Pilot(props) {
         <>
         <Card>
       <Card.Body>
-        <Stack direction="horizontal" gap={3}>
+        {/* <Stack direction="horizontal" gap={3}>
             <div className="p-2">Drive Status</div>
             <div className="p-2">
                 <Form >
@@ -50,7 +50,7 @@ function Pilot(props) {
                     />
                 </Form>
             </div>
-        </Stack>
+        </Stack> */}
         Speed :  -
         <ButtonGroup aria-label="Speed Control">
         <Button 
@@ -81,7 +81,7 @@ function Pilot(props) {
                 </Form>
             </div>
         </Stack>
-        OverHead Lamp :
+        {/* OverHead Lamp :
         <Form>
             <div key="inline-radio" className="mb-3">
               <Form.Check
@@ -112,7 +112,7 @@ function Pilot(props) {
                 onChange={()=>setelamp("0")}
               />
             </div>
-        </Form>
+        </Form> */}
         
         <Button 
           variant="danger"
@@ -123,10 +123,10 @@ function Pilot(props) {
     </Card>
     
         <p>Selected Refresh Rate : {props.refreshRate}</p>
-        <p>Api Runstatus : {statusres.runStatus}</p>
+        {/* <p>Api Runstatus : {statusres.runStatus}</p> */}
         <p>Api Speed dutycycle : {statusres.speed}</p>
         <p>Api Head lamp dutycycle : {statusres.headLamp}</p>
-        <p>Api OverHead lamp dutycycle : {statusres.comp1light}</p>
+        {/* <p>Api OverHead lamp dutycycle : {statusres.comp1light}</p> */}
         </>
         : <p>Loading.... Refresh Page, if it takes more time. Server might be down</p>
         }
